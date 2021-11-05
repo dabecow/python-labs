@@ -30,15 +30,20 @@ def find_product_by_id(local_id):
 
 
 def get_products_list_from_department(department_name):
-    return Product.select().where(Product.department ==
-                                                 Department.select().where(Department.name == department_name))
+    department = Department.select().where(Department.name == department_name)
+    return department.products
+
+    # return Product.select().where(Product.department ==
+    #                               Department.select().where(Department.name == department_name))
 
 
 def get_departments_list():
     return list(Department.select())
 
+
 def get_departments_names_list():
     return list(map(lambda department: department.name, Department.select()))
+
 
 def get_department_by_name(name):
     return Department.select().where(Department.name == name).get()

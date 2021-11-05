@@ -1,5 +1,6 @@
 import pickle
 
+
 class ProductController:
     __products_list = []
 

@@ -92,11 +92,11 @@ class MainWindow(tk.Frame):
     def add_product_button_clicked(self):
         try:
             self.product_controller.add_product(Product(
-                int(self.id_entry.get()),
-                self.name_entry.get(),
-                self.department_combobox.get(),
-                self.price_entry.get(),
-                self.description_entry.get()
+                id=int(self.id_entry.get()),
+                name=self.name_entry.get(),
+                department=self.department_combobox.get(),
+                price=self.price_entry.get(),
+                description=self.description_entry.get()
             ))
 
             if self.checked.get():

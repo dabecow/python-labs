@@ -20,7 +20,7 @@ class Department(BaseModel):
 class Product(BaseModel):
     id = IntegerField(primary_key=True)
     name = CharField()
-    department = ForeignKeyField(Department, related_name="products")
+    department = ForeignKeyField(Department, backref='products')
     price = IntegerField()
     description = CharField()
 

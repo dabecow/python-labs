@@ -12,11 +12,11 @@ if __name__ == '__main__':
             if choice == '1':
                 product_controller.add_product(
                     product=Product(
-                        int(input("Enter the id value\n>")),
-                        str(input("Enter the name value\n>")),
-                        str(input("Enter the department name value\n>")),
-                        str(input("Enter the price value\n>")),
-                        str(input("Enter the description value\n>"))
+                        id=int(input("Enter the id value\n>")),
+                        name=str(input("Enter the name value\n>")),
+                        department=str(input("Enter the department name value\n>")),
+                        price=str(input("Enter the price value\n>")),
+                        description=str(input("Enter the description value\n>"))
                     )
                 )
             elif choice == '2':

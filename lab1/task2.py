@@ -57,7 +57,18 @@ def input_new_set_and_return_distraction(own_list):
     choice = input("Enter the element to add, enter \\q to quit\n>")
 
     while choice != "\\q":
-        own_set.add(choice)
+        # own_set.add(choice)
+        if choice.__contains__('.'):
+            try:
+                own_set.add(float(choice))
+            except Exception as e:
+                pass
+        else:
+            try:
+                own_set.add(int(choice))
+            except Exception as e:
+                own_set.add(choice)
+
         choice = input("Enter the element to add, enter \\q to quit\n>")
 
     return set(own_list) - own_set
@@ -90,7 +101,17 @@ if __name__ == '__main__':
             if choice == '1':
                 print(a)
             elif choice == '2':
-                a.append(input("Enter new element to append\n>"))
+                value = input("Enter new element to append\n>")
+                if value.__contains__('.'):
+                    try:
+                        a.append(float(value))
+                    except Exception as e:
+                        pass
+                else:
+                    try:
+                        a.append(int(value))
+                    except Exception as e:
+                        a.append(value)
             elif choice == '3':
                 a.remove(a[len(a) - 1])
             elif choice == '4':

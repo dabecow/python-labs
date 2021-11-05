@@ -5,12 +5,20 @@ class Product:
     __price = float()
     __description = str()
 
-    def __init__(self, id, name, department, price, description):
-        self.__id = id
-        self.__name = name
-        self.__department = department
-        self.__price = price
-        self.__description = description
+    # def __init__(self, id, name, department, price, description):
+    #     self.__id = id
+    #     self.__name = name
+    #     self.__department = department
+    #     self.__price = price
+    #     self.__description = description
+
+    def __init__(self, **kwargs):
+        self.__id = kwargs.get("id")
+        self.__name = kwargs.get("name")
+        self.__department = kwargs.get("department")
+        self.__price = kwargs.get("price")
+        self.__description = kwargs.get("description")
+
 
     @property
     def id(self):
